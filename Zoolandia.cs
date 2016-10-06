@@ -1,25 +1,38 @@
 using System;
 
-namespace Zoolandia.Animals 
+namespace Zoolandia.Animalia 
 
 {
 
     public class Animal
     {
-        public string name { get; set; }
-        public int averageHeight {get; set; } 
-        public bool hasTail {get; set; } 
-        public double tongueLength {get; set; }
+        public string commonName { get; set; }
+        public string scientificName {get; set; } 
+        public bool endangered {get; set; } 
+
         public string sleep ()
         {
            return "Animal is now sleeping";
         }
     }
 
-    public class : Animal {
+    public class Canidae: Animal {
     
-    public string color {get; set;}
-    public string loveliness {get;set;}
+    public bool domesticated {get; set;}
+
+    }
+
+    public class Reptilia: Animal {
+    
+    public bool legged {get; set;}
+
+    public int avgLength {get; set;}
+
+    }
+
+    public class Primates: Animal {
+    
+    public double IQ {get; set;}
 
     }
 }
