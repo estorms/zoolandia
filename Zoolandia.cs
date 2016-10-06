@@ -15,7 +15,7 @@ namespace Zoolandia.Animalia
            return "Animal is now sleeping";
         }
 
-           public void eat (string food)
+           public virtual void eat (string food)
         {
            Console.Write($"Animal is now eating {food}");
         }
@@ -29,6 +29,11 @@ namespace Zoolandia.Animalia
     public class Canidae: Animal {
     
     public bool domesticated {get; set;}
+    public override string eat(string food) {
+        if (food != "vegetables only") {
+            return $"This animal eats {food}";
+        }
+    }
 
     }
 
