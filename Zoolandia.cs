@@ -15,9 +15,9 @@ namespace Zoolandia.Animalia
            return "Animal is now sleeping";
         }
 
-        public virtual void eat (string food)
+        public virtual string eat (string food)
         {
-           Console.Write($"Animal is now eating {food}");
+           return ($"Animal is now eating {food}");
         }
 
 
@@ -35,15 +35,18 @@ namespace Zoolandia.Animalia
     public class Canidae: Animal {
     
     public bool domesticated {get; set;}
-    public override void eat(string food) {
+    public override string eat(string food) {
         if (food != "vegetables only") {
-            Console.WriteLine( $"This animal eats {food}");
+            return $"This animal eats {food}";
+        }
+        else {
+            return "This animal doesn't eat what you think it does";
         }
     }
 
     public Canidae (){
         this.domesticated = true;
-    }
+        }
 
     }
 
@@ -57,7 +60,17 @@ namespace Zoolandia.Animalia
         this.legged = true;
     }
 
+     public override string eat(string food) {
+         if (food == "eggs") {
+             return $"This animal eats {food}";
+        }
+         else {
+            return "This animal doesn't eat what you think it does";
+        }
+
+
 //must create the constructor function within the class itself
+//had to add an else to the if statement in order to account for the string return and avoid error message stating that not all paths returned a function
     }
 
    
@@ -70,5 +83,12 @@ namespace Zoolandia.Animalia
         this.IQ = 1.2;
     }
     
+      public override string eat(string food) {
+         if (food == "Hostess Fruit Pie") {
+             return $"This animal eats {food}";
+        }
+         else {
+            return "This animal doesn't eat what you think it does";
+        }
     }
 }
