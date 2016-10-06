@@ -18,7 +18,7 @@ namespace Zoolandia
                 firstAnimal.endangered = false;
             }  
                 Console.WriteLine($"Your first animal is commonly known as {firstAnimal.commonName} and its scientific name is {firstAnimal.scientificName}. This is its boolean! ${firstAnimal.endangered}");              
-
+                firstAnimal.eat(args[3]);
         }
     
     }

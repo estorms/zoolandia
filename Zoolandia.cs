@@ -14,6 +14,16 @@ namespace Zoolandia.Animalia
         {
            return "Animal is now sleeping";
         }
+
+           public void eat (string food)
+        {
+           Console.Write($"Animal is now eating {food}");
+        }
+
+           public string reproduce (int avgOffspring)
+        {
+           return $"A female has an average of Convert.toInt16({avgOffspring}) in her lifetime.";
+        }
     }
 
     public class Canidae: Animal {
