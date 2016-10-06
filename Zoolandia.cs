@@ -15,26 +15,29 @@ namespace Zoolandia.Animalia
            return "Animal is now sleeping";
         }
 
-           public virtual void eat (string food)
+        public virtual void eat (string food)
         {
            Console.Write($"Animal is now eating {food}");
         }
 
+
+            public Animal () {
+                this.commonName = "animal"; 
+            }
+
+
            public string reproduce (int avgOffspring)
         {
-           return $"A female has an average of Convert.toInt16({avgOffspring}) in her lifetime.";
+           return $"A female has an average of {avgOffspring} offspring in her lifetime.";
         }
     }
 
-    public Animal () {
-        this.commonName = "animal"; 
-    }
     public class Canidae: Animal {
     
     public bool domesticated {get; set;}
-    public override string eat(string food) {
+    public override void eat(string food) {
         if (food != "vegetables only") {
-            return $"This animal eats {food}";
+            Console.WriteLine( $"This animal eats {food}");
         }
     }
 
