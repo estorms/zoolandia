@@ -7,10 +7,12 @@ namespace Zoolandia.Animals
     public class Animal
     {
         public string name { get; set; }
-
-        public static void sleep ()
+        public int averageWeight {get; set; } 
+        public bool livesWithLiz {get; set; } 
+        public double tongueLength {get; set;}
+        public string sleep ()
         {
-            Console.WriteLine("Animal is now sleeping");
+           return "Animal is now sleeping";
         }
     }
 }

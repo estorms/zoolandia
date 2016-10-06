@@ -7,7 +7,9 @@ namespace Zoolandia
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Animal firstanimal = new Animal();
+            Console.WriteLine(firstanimal.sleep());
+          
         }
     }
 
