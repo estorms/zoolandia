@@ -26,6 +26,9 @@ namespace Zoolandia.Animalia
         }
     }
 
+    public Animal () {
+        this.commonName = "animal"; 
+    }
     public class Canidae: Animal {
     
     public bool domesticated {get; set;}
@@ -33,6 +36,10 @@ namespace Zoolandia.Animalia
         if (food != "vegetables only") {
             return $"This animal eats {food}";
         }
+    }
+
+    public Canidae (){
+        this.domesticated = true;
     }
 
     }
@@ -43,11 +50,22 @@ namespace Zoolandia.Animalia
 
     public int avgLength {get; set;}
 
+    public Reptilia () {
+        this.legged = true;
     }
+
+//must create the constructor function within the class itself
+    }
+
+   
 
     public class Primates: Animal {
     
     public double IQ {get; set;}
 
+    public Primates () {
+        this.IQ = 1.2;
+    }
+    
     }
 }
