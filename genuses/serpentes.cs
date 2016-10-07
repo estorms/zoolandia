@@ -1,10 +1,10 @@
 
-namespace Zoolandia.Animalia.Serepentes
+namespace Zoolandia.Animalia.Serpentes
 {
 
-    public class Serpentes : Animal
+    public class Serpents : Animal
     {
-        public string name {get;set;}
+    
         public string diet = "omnivorous";
 
         public bool legged {get; set;}

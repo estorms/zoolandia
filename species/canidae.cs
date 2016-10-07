@@ -1,8 +1,7 @@
-using Zoolandia.Animalia;
 
 namespace Zoolandia.Canidae {
 
-public class Canidae : Animal
+public class Canidae : Canis
     {
 
         public bool domesticated { get; set; }
