@@ -25,7 +25,9 @@ namespace Zoolandia
             cottonMouth.scientificName = "Agkistrodon piscivorus";
             cottonMouth.endangered = true;
 
-            Console.WriteLine($"This reptile eats. Its common name is {cottonMouth.commonName}; its scientific name is {cottonMouth.scientificName}.");
+            Console.WriteLine($"This reptile's common name is {cottonMouth.commonName}; its scientific name is {cottonMouth.scientificName}.");
+
+            Console.WriteLine(JerryGarcia.greet());
 
         }
     }

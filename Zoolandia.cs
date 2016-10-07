@@ -12,15 +12,19 @@ namespace Zoolandia.Animalia
 
         public string food {get; set;}
 
-        public string sleep()
+        public void sleep()
         {
-            return "Animal is now sleeping";
+            Console.Write("Animal is now sleeping");
         }
 
         public virtual string eat(string food)
         {
             this.food = food;
             return $"This animal easts {food}";
+        }
+
+        public virtual string greet() {
+            return $"Welcome, {this.commonName}";
         }
 
 
@@ -121,6 +125,9 @@ namespace Zoolandia.Animalia
             {
                 return "This animal doesn't eat what you think it does";
             }
+        }
+           public override string greet() {
+            return $"{base.greet()}. You have an IQ of {this.IQ}.";
         }
     }
 }
