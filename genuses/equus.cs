@@ -4,10 +4,11 @@ namespace Zoolandia.Animalia.Equus
 
     public class Equus : Animal
     {
-        public string name {get;set;}
+
         public string diet = "herbivorous";
 
         public int numberOfLegs = 4;
+        public string name {get; set;}
         //  public enum height: long {Min = 4L, Max=7L}
 
         public bool domesticated { get; set; }

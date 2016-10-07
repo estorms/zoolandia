@@ -1,31 +1,25 @@
 
-namespace Zoolandia.Animalia.Serpentes.Snakes {
-public class Snakes : Serpents
+namespace Zoolandia.Animalia.Equus.Horses {
+public class Horses : Equus
     {
         public string speciesName {get;set;}
 
 
-        public string poison {get; set; }
+        public string coloration {get; set; }
 
-        public int avgLength { get; set; }
+        public int avgSpeed { get; set; }
 
-        public Snakes(string name, string poison, int avgLength)
+        public Horses(string name, string coloration, int avgSpeed)
         {
             this.name = name;
-            this.poison = poison;
-            this.avgLength = avgLength;
-        }
-
-        public override string swim () {
-            return $"The serpent is swimming twice as quickly as its prey";
+            this.coloration = coloration;
+            this.avgSpeed = avgSpeed;
         }
 
         public override string eat(string food)
         {
            return $"{this.name} eats {food} and {food} only";
         }
-
-    
 
         public string eat (string food, int timesPerDay) {
             return $"{this.name} eats {food} {timesPerDay} times per day.";
