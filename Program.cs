@@ -27,12 +27,13 @@ namespace Zoolandia
             //     Console.WriteLine(myAnimal.commonName); 
             //     Console.WriteLine(myAnimal.reproduce(7)); 
 
-            Reptilia myReptile = new Reptilia();
-            myReptile.eat("eggs");
+            Reptilia cottonMouth = new Reptilia();
+            cottonMouth.eat("eggs");
+            cottonMouth.reproduce(5);
+            cottonMouth.commonName = "cottonmouth";
+            cottonMouth.scientificName = "Agkistrodon piscivorus";
 
-            Console.WriteLine($"This reptile is {myReptile.legged} and eats {myReptile.food}. If it weren't a reptile, it would still be an animal, and therefore more likely to eat {myReptile: base.food}");
-
-
+            Console.WriteLine($"This reptile eats. Its common name is {cottonMouth.commonName}; its scientific name is {cottonMouth.scientificName}. It eats {cottonMouth.food} and bears an average of cottonMouth.offspring in its lifetime.");
         
         }
     }
