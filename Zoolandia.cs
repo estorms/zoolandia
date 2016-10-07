@@ -33,6 +33,9 @@ namespace Zoolandia.Animalia
             this.commonName = "animal";
         }
 
+        public Animal (string name) {
+            this.commonName = name;
+        }
 
         public string reproduce(int avgOffspring)
         {
