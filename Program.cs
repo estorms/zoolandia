@@ -2,7 +2,7 @@
 using Zoolandia.PrimateClass;
 using Zoolandia.ReptileClass;
 using Zoolandia.Animalia;
-
+using Zoolandia.Animalia.Equus;
 
 namespace Zoolandia
 {
@@ -44,6 +44,9 @@ namespace Zoolandia
             Animal overLoadedAnimal = new Animal("Jessup");
             Console.WriteLine($"You animal constructed by the overloaded method is named {overLoadedAnimal.commonName}.");
 
+            Equus myEquus = new Equus();
+            myEquus.name = "Zebra Jones";
+            Console.WriteLine(myEquus.giveHeight(6));
         }
     }
 }
