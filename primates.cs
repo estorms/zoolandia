@@ -10,9 +10,21 @@ public class Primates : Animal
 
         public int age {get; set;}
 
+        public Primates () {
+            this.IQ = 1.2;
+            this.name = "Pirate Jim";
+            this.age = 27;
+        }
+
+        public Primates (string name) {
+            this.name = name;
+        }
+        public Primates(int age) {
+            this.age = age;
+        }
+
         public Primates(string name, int age)
         {
-            this.IQ = 1.2;
             this.name = name;
             this.age = age;
         }

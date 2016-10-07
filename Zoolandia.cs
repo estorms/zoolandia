@@ -31,6 +31,7 @@ namespace Zoolandia.Animalia
         public Animal()
         {
             this.commonName = "animal";
+            
         }
 
         public Animal (string name) {
