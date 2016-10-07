@@ -69,11 +69,14 @@ namespace Zoolandia.Animalia
 
         public bool legged { get; set; }
 
+        public string poison {get; set; }
+
         public int avgLength { get; set; }
 
-        public Reptilia()
+        public Reptilia(string poison, bool legged)
         {
-            this.legged = true;
+            this.legged = legged;
+            this.poison = poison;
         }
 
         public override string eat(string food)
@@ -97,10 +100,15 @@ namespace Zoolandia.Animalia
     {
 
         public double IQ { get; set; }
+        public string name {get; set;}
 
-        public Primates()
+        public int age {get; set;}
+
+        public Primates(string name, int age)
         {
             this.IQ = 1.2;
+            this.name = name;
+            this.age = age;
         }
 
         public override string eat(string food)

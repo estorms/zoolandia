@@ -7,34 +7,26 @@ namespace Zoolandia
     {
         public static void Main(string[] args)
         {
-            // Animal firstAnimal = new Animal();
-            // firstAnimal.commonName = args[0];
-            // firstAnimal.scientificName = args[1];
-            // if (args[2] == "yes") {
-            //     firstAnimal.endangered = true;
-            // }
-            // else 
-            // {
-            //     firstAnimal.endangered = false;
-            // }  
-                
-            //     Canidae mycanidae = new Canidae();
-            //     mycanidae.commonName = "jim";
 
-            //     Console.WriteLine("Your first animal is commonly known as {0}", mycanidae.commonName);   
+            Primates BobDylan = new Primates("Bob Dylan", 45);
+            Console.WriteLine($"Welcome to the WonderDome, {BobDylan.name}. You are {BobDylan.age} years old.");
+            Primates JerryGarcia = new Primates("Jerry Garcia", 65);
+            Console.WriteLine($"Welcome to the WonderDome, {JerryGarcia.name}. You are {JerryGarcia.age} years old.");
+            Primates StephenColbert = new Primates("Stephen Colbert", 85);
+            Console.WriteLine($"Welcome to the WonderDome, {StephenColbert.name}. You are {StephenColbert.age} years old.");
+            Primates DonaldTrump = new Primates("Donald Trump", 12);
+            Console.WriteLine($"Welcome to the WonderDome, {DonaldTrump.name}. You are {DonaldTrump.age} years old.");
 
-            //     Animal myAnimal = new Animal();
-            //     Console.WriteLine(myAnimal.commonName); 
-            //     Console.WriteLine(myAnimal.reproduce(7)); 
 
-            Reptilia cottonMouth = new Reptilia();
+            Reptilia cottonMouth = new Reptilia("witch venom", false);
             cottonMouth.eat("eggs");
-            cottonMouth.reproduce(5);
+            Console.WriteLine(cottonMouth.reproduce(5));
             cottonMouth.commonName = "cottonmouth";
             cottonMouth.scientificName = "Agkistrodon piscivorus";
+            cottonMouth.endangered = true;
 
-            Console.WriteLine($"This reptile eats. Its common name is {cottonMouth.commonName}; its scientific name is {cottonMouth.scientificName}. It eats {cottonMouth.food} and bears an average of cottonMouth.offspring in its lifetime.");
-        
+            Console.WriteLine($"This reptile eats. Its common name is {cottonMouth.commonName}; its scientific name is {cottonMouth.scientificName}.");
+
         }
     }
 }
