@@ -1,5 +1,7 @@
 ﻿using System;
-using Zoolandia.Animalia;
+using Zoolandia.PrimateClass;
+using Zoolandia.ReptileClass;
+
 
 namespace Zoolandia
 {
