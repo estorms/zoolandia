@@ -1,45 +1,49 @@
-using System;
-
-namespace Zoolandia.Animalia
+namespace Zoolandia.Taxonomy
 
 {
 
     public class Animal
     {
+        public string animalName { get; set; }
+
+        public Species species { get; set; }
+
+        public Genus genus { get; set; }
+
+        public Animal(string animalName)
+        {
+            this.animalName = animalName;
+        }
+
+        public string animalDetails () {
+            return $"{this.animalName} is of the species {this.species} and genus {this.genus}.";
+            }
+        }
+    }
+
+
+    public class Species
+    {
         public string commonName { get; set; }
-        public string scientificName { get; set; }
-        public bool endangered { get; set; }
 
-        public string food {get; set;}
+         public string scientificName { get; set; }
 
-        public void sleep()
+        public Species(string commonName, string scientificName)
         {
-            Console.Write("Animal is now sleeping");
-        }
+            this.commonName = commonName;
+            this.scientificName = scientificName;
 
-        public virtual string eat(string food)
+        }
+    }
+
+    public class Genus
+    {
+        public string genusName { get; set; }
+
+        public Genus(string genusName)
         {
-            this.food = food;
-            return $"This animal easts {food}";
+            this.genusName = genusName;
         }
+    }
 
-        public virtual string greet() {
-            return $"Welcome, {this.commonName}";
-        }
-
-
-        public Animal()
-        {
-            this.commonName = "animal";
-        }
-
-        public Animal (string name) {
-            this.commonName = name;
-        }
-
-        public string reproduce(int avgOffspring)
-        {
-            return $"A female has an average of {avgOffspring} offspring in her lifetime.";
-        }
-    }    
 }

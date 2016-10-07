@@ -1,13 +1,14 @@
 ﻿using System;
+using Zoolandia.Taxonomy;
 
-namespace Zoolandia.Animals
+namespace Zoolandia
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("you're in the zoo!");
-
+            Animal Manson = new Animal("Manson");
+            Manson.species = new Species("meerkat", "Suricata suricatta");
         }
     }
 }
