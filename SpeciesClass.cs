@@ -7,7 +7,11 @@ namespace Zoolandia.SpeciesClass
 
         public string scientificName { get; set; }
 
-        private bool endangered { get; set; }
+        public  bool endangered { get; set; }
+
+        public string habitat {get; set ;}
+
+        public string name {get; set;}
     }
 
 }

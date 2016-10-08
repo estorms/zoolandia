@@ -1,5 +1,6 @@
 ﻿using System;
 using Zoolandia.AnimalsClass;
+using Zoolandia.Animals.Suricatta;
 
 namespace Zoolandia
 {
@@ -7,10 +8,9 @@ namespace Zoolandia
     {
         public static void Main(string[] args)
         {
-            //mongoose
-            Animal Manson = new Animal("Manson");
-            Manson.species = new Species("meerkat", "Suricata suricatta");
-            Manson.genus = new Genus ("Suricata");
+            Suricatta firstSuricatta = new Suricatta("Manson");
+            Console.WriteLine(firstSuricatta);
+           
         }
     }
 }

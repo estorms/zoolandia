@@ -1,3 +1,6 @@
+using Zoolandia.SpeciesClass;
+using Zoolandia.GenusClass;
+
 namespace Zoolandia.AnimalsClass
 
 {
