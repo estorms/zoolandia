@@ -1,5 +1,7 @@
 namespace Zoolandia.AnimalsInterface {
 
+//All methods/properties in interface must be in implementing class, but implementing class can have additional properties/methods
+
     interface IAnimal
     {
     string animalDetails();
