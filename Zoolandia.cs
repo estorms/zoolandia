@@ -37,6 +37,8 @@ namespace Zoolandia
             // Barton_Fink.secretName = "Barton Fink";
             //The following DOES work, because the secret name is not the same as the animal name
             Barton_Fink.secretName = "Bartholomew";
+            Console.WriteLine(Barton_Fink.eat("someone's face"));
+            Console.WriteLine(Barton_Fink.eat("someone's face", 8));
            
            
         }

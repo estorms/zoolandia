@@ -58,8 +58,11 @@ namespace Zoolandia.AnimalsClass
             }
         }
 
+        public string eat (string food) {
+            return $"{this.animalName} eats {food}.";
+        }
 
-        public virtual string eat(string food, int timesPerDay)
+        public string eat(string food, int timesPerDay)
         {
             return $"{this.animalName} eats {food} {timesPerDay} a day.";
         }
