@@ -12,10 +12,10 @@ namespace Zoolandia.Animals.Geoffrensis
             this.scientificName = "Geoffrensis";
             this.endangered = false;
             this.habitat = "Amazonian Rainforest";
-//genus: Inus
+            //genus: Inus
         }
 
     }
-// 
+    // 
 }
 
