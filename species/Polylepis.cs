@@ -6,7 +6,7 @@ namespace Zoolandia.Animals.Polylepis
     public class Polylepis : Species
     {
 
-        public Polylepis(string name)
+        public Polylepis()
         {
             this.commonName = "black mamba";
             this.scientificName = "Polylepsis";
