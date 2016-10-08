@@ -11,7 +11,6 @@ namespace Zoolandia.SpeciesClass
 
         public string habitat {get; set ;}
 
-        public string name {get; set;}
     }
 
 }

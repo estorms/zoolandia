@@ -5,7 +5,7 @@ namespace Zoolandia.AnimalsClass
 
 {
 
-    public class Animal
+     public class Animal
     {
         public string animalName { get; set; }
 
