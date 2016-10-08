@@ -1,3 +1,4 @@
+using System;
 using Zoolandia.SpeciesClass;
 
 namespace Zoolandia.Animals.Alces
@@ -12,10 +13,12 @@ namespace Zoolandia.Animals.Alces
             this.scientificName = "Alces";
             this.endangered = false;
             this.habitat = "Boreal Forest";
-//genus: Alces
+            //genus: Alces
         }
-
+         public override string speak(string language)
+        {
+            return $"The {this.commonName} speaks the language of {language}. {base.speak("Urdu")}";
+        }
     }
-// 
+    // 
 }
-

@@ -39,7 +39,10 @@ namespace Zoolandia
             Barton_Fink.secretName = "Bartholomew";
             Console.WriteLine(Barton_Fink.eat("someone's face"));
             Console.WriteLine(Barton_Fink.eat("someone's face", 8));
-           
+            // Console.WriteLine(Barton_Fink.species.communicate("Greek"));
+            // Console.WriteLine(Manfred_Mann.species.communicate("Urdu"));
+
+            Console.WriteLine(Manfred_Mann.species.speak("Arabic"));
            
         }
     }
