@@ -42,6 +42,10 @@ namespace Zoolandia
             // Console.WriteLine(Barton_Fink.species.communicate("Greek"));
             // Console.WriteLine(Manfred_Mann.species.communicate("Urdu"));
 
+            Console.WriteLine(Barton_Fink.species.speciesDetails());
+
+            //OTHER LESSONS: CAN'T CALL A BASE IN A STATIC METHOD, e.g., HERE IN MAIN. Had to do it in the class wherein the overriddent method was defined ... in fact, did it within the same method.
+
             Console.WriteLine(Manfred_Mann.species.speak("Arabic"));
            
         }
