@@ -11,6 +11,10 @@ namespace Zoolandia.SpeciesClass
 
         public string habitat {get; set ;}
 
+        public string speciesDetails () {
+            return $"The {this.commonName}'s scientific name is {this.scientificName}. Its natural habitat is {this.habitat}.";
+        }
+
     }
 
 }

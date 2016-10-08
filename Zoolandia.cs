@@ -22,7 +22,13 @@ namespace Zoolandia
 
             Animal Manfred_Mann = new Animal("Manfred Mann");
             Manfred_Mann.species = new Alces ();
+            //the following works
+           Console.WriteLine(Manfred_Mann.species.speciesDetails());
+           //the following does NOT work. speciesDetails is a METHOD on species, which is a PROPERTY on Manfred. Have to burrow into the property itself in order to call its method.
 
+        //    Console.WriteLine(Manfred_Mann.speciesDetails());
+
+            Manfred_Mann.genus = new
            
            
         }

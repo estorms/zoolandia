@@ -8,7 +8,7 @@ namespace Zoolandia.Animals.Alces
 
         public Alces()
         {
-            this.commonName = "Moose";
+            this.commonName = "moose";
             this.scientificName = "Alces";
             this.endangered = false;
             this.habitat = "Boreal Forest";
