@@ -1,49 +1,16 @@
-namespace Zoolandia.Taxonomy
+﻿using System;
+using Zoolandia.AnimalsClass;
 
+namespace Zoolandia
 {
-
-    public class Animal
+    public class Program
     {
-        public string animalName { get; set; }
-
-        public Species species { get; set; }
-
-        public Genus genus { get; set; }
-
-        public Animal(string animalName)
+        public static void Main(string[] args)
         {
-            this.animalName = animalName;
-        }
-
-        public string animalDetails () {
-            return $"{this.animalName} is of the species {this.species} and genus {this.genus}.";
-            }
+            //mongoose
+            Animal Manson = new Animal("Manson");
+            Manson.species = new Species("meerkat", "Suricata suricatta");
+            Manson.genus = new Genus ("Suricata");
         }
     }
-
-
-    public class Species
-    {
-        public string commonName { get; set; }
-
-         public string scientificName { get; set; }
-
-        public Species(string commonName, string scientificName)
-        {
-            this.commonName = commonName;
-            this.scientificName = scientificName;
-
-        }
-    }
-
-    public class Genus
-    {
-        public string genusName { get; set; }
-
-        public Genus(string genusName)
-        {
-            this.genusName = genusName;
-        }
-    }
-
 }
