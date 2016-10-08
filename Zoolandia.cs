@@ -28,7 +28,15 @@ namespace Zoolandia
 
         //    Console.WriteLine(Manfred_Mann.speciesDetails());
 
-            Manfred_Mann.genus = new
+            Manfred_Mann.genus = new Genus("Alces");
+            Console.WriteLine(Manfred_Mann.animalDetails());
+            Animal Barton_Fink = new Animal ("Barton Fink");
+            Barton_Fink.species = new Polylepis();
+            Barton_Fink.genus = new Genus("Dendroaspis");
+           //The following won't work: it tries tries to set the _secretname to the animal name, which is disallowed in the logic in Animal class:
+            // Barton_Fink.secretName = "Barton Fink";
+            //The following DOES work, because the secret name is not the same as the animal name
+            Barton_Fink.secretName = "Bartholomew";
            
            
         }

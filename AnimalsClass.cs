@@ -17,7 +17,7 @@ namespace Zoolandia.AnimalsClass
 
         private string _secretName = "";
 
-        //Public methods for retrieving private property names
+        //Public methods for setting and getting private property names, with logic included
 
         public string secretName
         {
@@ -43,7 +43,7 @@ namespace Zoolandia.AnimalsClass
         //Public methods on animal class
         public string animalDetails()
         {
-            return $"{this.animalName} is of the species {this.species} and genus {this.genus}.";
+            return $"{this.animalName} is of the species {this.species.scientificName} and genus {this.genus.genusName}. {this.animalName} is commonly known as a {this.species.commonName}.";
         }
 
         public string sleep(bool asleep)
