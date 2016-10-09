@@ -40,20 +40,14 @@ namespace Zoolandia
             Barton_Fink.secretName = "Bartholomew";
             Console.WriteLine(Barton_Fink.eat("someone's face"));
             Console.WriteLine(Barton_Fink.eat("someone's face", 8));
-            // Console.WriteLine(Barton_Fink.species.communicate("Greek"));
-            // Console.WriteLine(Manfred_Mann.species.communicate("Urdu"));
-
             Console.WriteLine(Barton_Fink.species.speciesDetails());
 
             //OTHER LESSONS: CAN'T CALL A BASE IN A STATIC METHOD, e.g., HERE IN MAIN. Had to do it in the class wherein the overriddent method was defined ... in fact, did it within the same method.
 
             Console.WriteLine(Manfred_Mann.species.speak("Romanian"));
-            if (Console.ReadLine() == "yes") {
-                Console.WriteLine("You typed 'yes'");
-            }
-            else {
-                Console.WriteLine("You didn't type 'yes'");
-            }
+            Console.WriteLine("Give Manfred Mann a secret name! Just remember, it must be different from his real name.");
+            Manfred_Mann.secretName = Console.ReadLine();
+            Console.WriteLine($"Manfred Mann's secret name has been set to {Manfred_Mann.secretName}");
             
         }
     }
