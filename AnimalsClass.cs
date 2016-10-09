@@ -6,8 +6,10 @@ namespace Zoolandia.AnimalsClass
 
 {
 
-    public class Animal: IAnimal
+    public class Animal : IAnimal
     {
+
+
         //Public property names, including other classes 
         public string animalName { get; set; }
 
@@ -29,10 +31,10 @@ namespace Zoolandia.AnimalsClass
 
             set
             {
-                if (value !=  animalName)
+                if (value != animalName)
                     _secretName = value;
             }
-            
+
         }
         //Animal constructor method
 
@@ -59,7 +61,8 @@ namespace Zoolandia.AnimalsClass
             }
         }
 
-        public string eat (string food) {
+        public string eat(string food)
+        {
             return $"{this.animalName} eats {food}.";
         }
 

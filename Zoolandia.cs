@@ -11,6 +11,7 @@ using Zoolandia.Animals.Tetradactyla;
 using Zoolandia.Animals.Variegatus;
 using Zoolandia.GenusClass;
 using Zoolandia.SpeciesClass;
+using Zoolandia.ZooSpace;
 
 
 namespace Zoolandia
@@ -42,13 +43,27 @@ namespace Zoolandia
             Console.WriteLine(Barton_Fink.eat("someone's face", 8));
             Console.WriteLine(Barton_Fink.species.speciesDetails());
 
-            //OTHER LESSONS: CAN'T CALL A BASE IN A STATIC METHOD, e.g., HERE IN MAIN. Had to do it in the class wherein the overriddent method was defined ... in fact, did it within the same method.
+            Animal Jeffrey = new Animal ("Jeffrey");
+            Jeffrey.species = new Geoffrensis();
+            Jeffrey.genus = new Genus("Inus");
+            Console.WriteLine(Jeffrey.species.speciesDetails());
+
+            Console.WriteLine(Jeffrey.species.commonName);
+            //OTHER LESSONS: CAN'T CALL A BASE IN A STATIC METHOD, e.g., HERE IN MAIN. Had to do it in the class wherein the overridden method was defined ... in fact, did it within the same method.
 
             Console.WriteLine(Manfred_Mann.species.speak("Romanian"));
-            Console.WriteLine("Give Manfred Mann a secret name! Just remember, it must be different from his real name.");
-            Manfred_Mann.secretName = Console.ReadLine();
-            Console.WriteLine($"Manfred Mann's secret name has been set to {Manfred_Mann.secretName}");
-            
+            // Console.WriteLine("Give Manfred Mann a secret name! Just remember, it must be different from his real name.");
+            // Manfred_Mann.secretName = Console.ReadLine();
+            // Console.WriteLine($"Manfred Mann's secret name has been set to {Manfred_Mann.secretName}");
+
+            Zoo zoolandiaZoo = new Zoo();
+            zoolandiaZoo.addAnimal("Jeffrey");
+            zoolandiaZoo.addAnimal("Jim");
+            zoolandiaZoo.addAnimal("James");
+            zoolandiaZoo.addAnimal("Jessica");
+            zoolandiaZoo.addAnimal("Juan");
+            Console.WriteLine(zoolandiaZoo.showAnimals());
+
         }
     }
 }
