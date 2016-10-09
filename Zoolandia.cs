@@ -11,7 +11,10 @@ using Zoolandia.Animals.Tetradactyla;
 using Zoolandia.Animals.Variegatus;
 using Zoolandia.GenusClass;
 using Zoolandia.SpeciesClass;
-using Zoolandia.ZooSpace;
+using Zoolandia.Habitats;
+using Zoolandia.AmazonianRainforest;
+using Zoolandia.SouthAfrica;
+using Zoolandia.BorealForest;
 
 
 namespace Zoolandia
@@ -61,6 +64,10 @@ namespace Zoolandia
             zoolandiaZoo.addAnimal(Manfred_Mann);
             zoolandiaZoo.addAnimal(Barton_Fink);
             Console.WriteLine(zoolandiaZoo.showAnimals());
+
+
+            Animal myAnimal = new Animal(args[0]);
+            Console.WriteLine(myAnimal.animalName);
 
         }
     }
