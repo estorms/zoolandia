@@ -14,7 +14,10 @@ namespace Zoolandia.Animals.Geoffrensis
             this.habitat = "Amazonian Rainforest";
             //genus: Inus
         }
-
+        public override string speak(string language)
+        {
+            return $"The {this.commonName} speaks the language of {language}. {base.speak("Urdu")}";
+        }
     }
     // 
 }

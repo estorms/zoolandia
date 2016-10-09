@@ -16,7 +16,10 @@ namespace Zoolandia.Animals.Murinus
             this.habitat = "Amazonian Rainforest";
             this.killsBy = "strangulation";
         }
-
+        public override string speak(string language)
+        {
+            return $"The {this.commonName} speaks the language of {language}. {base.speak("Urdu")}";
+        }
     }
     // 
 }

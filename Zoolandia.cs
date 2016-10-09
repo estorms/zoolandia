@@ -20,6 +20,7 @@ namespace Zoolandia
         public static void Main(string[] args)
         {
 
+            Console.WriteLine("Let's liberate some sentient beings. Who's your pal?");
             Animal Manfred_Mann = new Animal("Manfred Mann");
             Manfred_Mann.species = new Alces ();
             //the following works
@@ -46,8 +47,14 @@ namespace Zoolandia
 
             //OTHER LESSONS: CAN'T CALL A BASE IN A STATIC METHOD, e.g., HERE IN MAIN. Had to do it in the class wherein the overriddent method was defined ... in fact, did it within the same method.
 
-            Console.WriteLine(Manfred_Mann.species.speak("Arabic"));
-           
+            Console.WriteLine(Manfred_Mann.species.speak("Romanian"));
+            if (Console.ReadLine() == "yes") {
+                Console.WriteLine("You typed 'yes'");
+            }
+            else {
+                Console.WriteLine("You didn't type 'yes'");
+            }
+            
         }
     }
 }
