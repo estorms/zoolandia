@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Zoolandia.AnimalsClass;
 
 namespace Zoolandia.ZooSpace
 {
@@ -6,20 +7,20 @@ namespace Zoolandia.ZooSpace
     public class Zoo
     {
 
-        public List<string> ZoolandiaAnimals = new List<string>();
+        public List<Animal> ZoolandiaAnimals = new List<Animal>();
 
-        public void addAnimal(string animal)
+        public void addAnimal(Animal animal)
         {
-            ZoolandiaAnimals.Add(animal);
+            ZoolandiaAnimals.(animal);
         }
 
         public string showAnimals()
         {
             string output = "";
 
-            foreach (string animal in ZoolandiaAnimals)
+            foreach (Animal animal in ZoolandiaAnimals)
             {
-                output += $"\n{animal} has joined Zoolandia!";
+                output += $"\n{animal.animalName} has joined Zoolandia!";
             }
 
             return output;

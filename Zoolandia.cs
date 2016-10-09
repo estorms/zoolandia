@@ -57,11 +57,9 @@ namespace Zoolandia
             // Console.WriteLine($"Manfred Mann's secret name has been set to {Manfred_Mann.secretName}");
 
             Zoo zoolandiaZoo = new Zoo();
-            zoolandiaZoo.addAnimal("Jeffrey");
-            zoolandiaZoo.addAnimal("Jim");
-            zoolandiaZoo.addAnimal("James");
-            zoolandiaZoo.addAnimal("Jessica");
-            zoolandiaZoo.addAnimal("Juan");
+            zoolandiaZoo.addAnimal(Jeffrey);
+            zoolandiaZoo.addAnimal(Manfred_Mann);
+            zoolandiaZoo.addAnimal(Barton_Fink);
             Console.WriteLine(zoolandiaZoo.showAnimals());
 
         }
