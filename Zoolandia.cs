@@ -47,7 +47,6 @@ namespace Zoolandia
             appHabitat.AllAnimals.Add(Martha);            
             
             // Console.WriteLine(Martha.species.speciesDetails());
-
             Animal Barton_Fink = new Animal("Barton Fink");
             Barton_Fink.species = new Polylepis();
             Barton_Fink.species.genus = new Genus("Dendroaspis");
