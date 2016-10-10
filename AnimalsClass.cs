@@ -14,7 +14,6 @@ namespace Zoolandia.AnimalsClass
 
         public Species species { get; set; }
 
-        public Genus genus { get; set; }
         //Private property names
 
         private string _secretName = "";

@@ -33,7 +33,7 @@ namespace Zoolandia
 
             Animal Manfred_Mann = new Animal("Manfred Mann");
             Manfred_Mann.species = new Alces();
-            Manfred_Mann.genus = new Genus("Alces");
+            Manfred_Mann.species.genus = new Genus("Alces");
             //below is NOT dry
             // appHabitat.addToAllAnimals(Manfred_Mann);
             //add animals directly here, instead of via method defined in habitat class: this IS dry
@@ -43,55 +43,55 @@ namespace Zoolandia
 
             Animal Martha = new Animal("Martha");
             Martha.species = new Murinus();
-            Martha.genus = new Genus("Eunectes");
+            Martha.species.genus = new Genus("Eunectes");
             appHabitat.AllAnimals.Add(Martha);            
             
             // Console.WriteLine(Martha.species.speciesDetails());
 
             Animal Barton_Fink = new Animal("Barton Fink");
             Barton_Fink.species = new Polylepis();
-            Barton_Fink.genus = new Genus("Dendroaspis");
+            Barton_Fink.species.genus = new Genus("Dendroaspis");
             appHabitat.AllAnimals.Add(Barton_Fink);            
             
             // Console.WriteLine(Barton_Fink.species.speciesDetails());
 
             Animal Jeffrey = new Animal("Jeffrey");
             Jeffrey.species = new Geoffrensis();
-            Jeffrey.genus = new Genus("Inus");
+            Jeffrey.species.genus = new Genus("Inus");
             appHabitat.AllAnimals.Add(Barton_Fink);            
             
             // Console.WriteLine(Jeffrey.species.speciesDetails());
 
             Animal Mr_Bipps = new Animal("Mr. Bipps");
             Mr_Bipps.species = new Suricatta();
-            Mr_Bipps.genus = new Genus("Suricata");
+            Mr_Bipps.species.genus = new Genus("Suricata");
             appHabitat.AllAnimals.Add(Mr_Bipps);            
             
             // Console.WriteLine(Mr_Bipps.species.speciesDetails());
 
             Animal Sally = new Animal("Sally");
             Sally.species = new Sirtalis();
-            Sally.genus = new Genus("Thamnophis");
+            Sally.species.genus = new Genus("Thamnophis");
             appHabitat.AllAnimals.Add(Sally);            
             
             // Console.WriteLine(Sally.species.speciesDetails());
 
             Animal PatPat = new Animal("PatPat");
             PatPat.species = new Pacifica();
-            PatPat.genus = new Genus("Gavia");
+            PatPat.species.genus = new Genus("Gavia");
             appHabitat.AllAnimals.Add(PatPat);
             
             // Console.WriteLine(PatPat.species.speciesDetails());
 
             Animal Terry = new Animal("Terry");
             Terry.species = new Tetradactyla();
-            Terry.genus = new Genus("Phataginus");
+            Terry.species.genus = new Genus("Phataginus");
             appHabitat.AllAnimals.Add(Terry);            
             // Console.WriteLine(Terry.species.speciesDetails());
 
             Animal Viraj = new Animal("Viraj");
             Viraj.species = new Variegatus();
-            Viraj.genus = new Genus("Bradypus");
+            Viraj.species.genus = new Genus("Bradypus");
             appHabitat.AllAnimals.Add(Viraj);            
             
             // Console.WriteLine(Viraj.species.speciesDetails());
@@ -124,17 +124,17 @@ namespace Zoolandia
             SouthAfricanHabitat SouthAfricanHabitat = new SouthAfricanHabitat();
 
             //add animals to habitats
-            AmazonianRainforestHabitat.addtoAmazonianRainforest(Martha);
-            AmazonianRainforestHabitat.addtoAmazonianRainforest(Jeffrey);
-            AmazonianRainforestHabitat.addtoAmazonianRainforest(Viraj);
+            AmazonianRainforestHabitat.AllAnimals.Add(Martha);
+            AmazonianRainforestHabitat.AllAnimals.Add(Jeffrey);
+            AmazonianRainforestHabitat.AllAnimals.Add(Viraj);
 
-            BorealForestHabitat.addToBorealForest(Manfred_Mann);
-            BorealForestHabitat.addToBorealForest(PatPat);
-            BorealForestHabitat.addToBorealForest(Sally);
+            BorealForestHabitat.AllAnimals.Add(Manfred_Mann);
+            BorealForestHabitat.AllAnimals.Add(PatPat);
+            BorealForestHabitat.AllAnimals.Add(Sally);
 
-            SouthAfricanHabitat.addToSouthAfricanHabitat(Barton_Fink);
-            SouthAfricanHabitat.addToSouthAfricanHabitat(Mr_Bipps);
-            SouthAfricanHabitat.addToSouthAfricanHabitat(Terry);
+            SouthAfricanHabitat.AllAnimals.Add(Barton_Fink);
+            SouthAfricanHabitat.AllAnimals.Add(Mr_Bipps);
+            SouthAfricanHabitat.AllAnimals.Add(Terry);
 
             //show user habitats and their animals
 
