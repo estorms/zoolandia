@@ -1,5 +1,4 @@
 using Zoolandia.SpeciesClass;
-using Zoolandia.GenusClass;
 using Zoolandia.AnimalsInterface;
 
 namespace Zoolandia.AnimalsClass
@@ -44,7 +43,7 @@ namespace Zoolandia.AnimalsClass
         //Public methods on animal class
         public string animalDetails()
         {
-            return $"{this.animalName} is of the species {this.species.scientificName} and genus {this.genus.genusName}. {this.animalName} is commonly known as a {this.species.commonName}.";
+            return $"{this.animalName} is of the species {this.species.scientificName} and genus {this.species.genus.genusName}. {this.animalName} is commonly known as a {this.species.commonName}.";
         }
 
         public string sleep(bool asleep)

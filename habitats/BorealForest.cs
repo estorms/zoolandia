@@ -9,22 +9,9 @@ namespace Zoolandia.BorealForest
     public class BorealForestHabitat: Habitat
     {
         public List<Animal> BorealForestAnimals = new List<Animal>();
+     public BorealForestHabitat(string name) {
+            this.name = name;
+        }  
 
-        public void addToBorealForest(Animal animal)
-        {
-            BorealForestAnimals.Add(animal);
-        }
-
-        public string showBorealForestAnimals()
-        {
-            string output = "";
-
-            foreach (Animal animal in BorealForestAnimals)
-            {
-                output += $"\n{animal.animalName} has joined the Boreal Forest Habitat!";
-            }
-
-            return output;
-        }
     }
 }

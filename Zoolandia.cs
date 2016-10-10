@@ -119,22 +119,26 @@ namespace Zoolandia
             // Console.WriteLine($"Manfred Mann's secret name has been set to {Manfred_Mann.secretName}");
 
             //create habitats
-            BorealForestHabitat BorealForestHabitat = new BorealForestHabitat();
-            AmazonianRainforestHabitat AmazonianRainforestHabitat = new AmazonianRainforestHabitat();
-            SouthAfricanHabitat SouthAfricanHabitat = new SouthAfricanHabitat();
+            BorealForestHabitat BorealForestHabitat = new BorealForestHabitat("Boreal Forest");
+            AmazonianRainforestHabitat AmazonianRainforestHabitat = new AmazonianRainforestHabitat("Amazonian Rainforest");
+            SouthAfricanHabitat SouthAfricanHabitat = new SouthAfricanHabitat("South African");
 
             //add animals to habitats
             AmazonianRainforestHabitat.AllAnimals.Add(Martha);
             AmazonianRainforestHabitat.AllAnimals.Add(Jeffrey);
             AmazonianRainforestHabitat.AllAnimals.Add(Viraj);
+            Console.WriteLine(AmazonianRainforestHabitat.showAllAnimals(AmazonianRainforestHabitat.name));
 
             BorealForestHabitat.AllAnimals.Add(Manfred_Mann);
             BorealForestHabitat.AllAnimals.Add(PatPat);
             BorealForestHabitat.AllAnimals.Add(Sally);
+            Console.WriteLine(BorealForestHabitat.showAllAnimals(BorealForestHabitat.name));
+            
 
             SouthAfricanHabitat.AllAnimals.Add(Barton_Fink);
             SouthAfricanHabitat.AllAnimals.Add(Mr_Bipps);
             SouthAfricanHabitat.AllAnimals.Add(Terry);
+            Console.WriteLine(SouthAfricanHabitat.showAllAnimals(SouthAfricanHabitat.name));
 
             //show user habitats and their animals
 
@@ -142,34 +146,39 @@ namespace Zoolandia
             // Console.WriteLine(BorealForestHabitat.showBorealForestAnimals());
             // Console.WriteLine(AmazonianRainforestHabitat.showAmazonianRainforestAnimals());
 
+            //THIS IS PLAY: UNCOMMENT IT OUT!
 
+            // Console.WriteLine("Make a new animal! Enter its name, species, and secret name!");
+            // string userinput = Console.ReadLine();
+            // string userAnimalName = userinput.Split(new Char[] { ' ' })[0];
+            // string userSpeciesChoice = userinput.Split(new Char[] { ' ' })[1];
+            // string userSecretName = userinput.Split(new Char[] { ' ' })[2];
 
-            Console.WriteLine("Make a new animal! Enter its name, species, and secret name!");
-            // Animal myAnimal = new Animal(args[0]);
-            // Console.WriteLine(myAnimal.animalName);
-            string userinput = Console.ReadLine();
-            string userAnimalName = userinput.Split(new Char[] { ' ' })[0];
-            string userSpeciesChoice = userinput.Split(new Char[] { ' ' })[1];
-            string userSecretName = userinput.Split(new Char[] { ' ' })[2];
+            //THIS IS WHERE PLAY ENDS
 
             //following won't work, still need to fully investigate why, has to do with how Console.WriteLine works, expects what happens after comma to be an argument:
 
             // Console.WriteLine(userAnimalName, userSecretName)
 
             // will work
-            Console.WriteLine($"{userAnimalName} {userSpeciesChoice} {userSecretName}");
-            Animal userAnimal = new Animal(userAnimalName);
-            string userAnimalSpeciesCommonName = null;
+
+            //THIS IS PLAY. UNCOMMENT IT OUT!
+
+            // Console.WriteLine($"{userAnimalName} {userSpeciesChoice} {userSecretName}");
+            // Animal userAnimal = new Animal(userAnimalName);
+            // string userAnimalSpeciesCommonName = null;
             
-            foreach (Animal animal in appHabitat.AllAnimals) {
-                if (animal.species.commonName == userSpeciesChoice) {
-                    Console.WriteLine("match!");
-                    userAnimalSpeciesCommonName = userSpeciesChoice;
-                    userAnimal.species = new Pacifica();
+            // foreach (Animal animal in appHabitat.AllAnimals) {
+            //     if (animal.species.commonName == userSpeciesChoice) {
+            //         Console.WriteLine("match!");
+            //         userAnimalSpeciesCommonName = userSpeciesChoice;
+            //         userAnimal.species = new Pacifica();
                     
-                }
-            }
-            // Animal userAnimal = new Animal("userAnimalName");
+            //     }
+            // }
+
+
+//THIS IS WHERE PLAY ENDS
         }
 
         // private static Animal[] GetAllAnimals(Animal[] allAnimals)

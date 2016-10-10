@@ -13,13 +13,14 @@ namespace Zoolandia.Habitats
 
         public List<Animal> AllAnimals = new List<Animal>();
 
-        public string showAllAnimals()
+        public string showAllAnimals(string name)
         {
             string output = "";
 
             foreach (Animal animal in AllAnimals)
             {
-                output += $"\n{animal.animalName} has joined the global habitat!";
+                output += $"\n{animal.animalName} has joined the {name} habitat!";
+
             }
 
             return output;
