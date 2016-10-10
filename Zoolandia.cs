@@ -13,8 +13,8 @@ using Zoolandia.GenusClass;
 using Zoolandia.AmazonianRainforest;
 using Zoolandia.SouthAfrica;
 using Zoolandia.BorealForest;
-using Zoolandia.Habitats;
 
+//cool things to do: cycle through each animal, determine its habitat based on species property
 
 namespace Zoolandia
 {
@@ -31,54 +31,55 @@ namespace Zoolandia
             Animal Manfred_Mann = new Animal("Manfred Mann");
             Manfred_Mann.species = new Alces();
             Manfred_Mann.genus = new Genus("Alces");
-            Console.WriteLine(Manfred_Mann.species.speciesDetails());
+            // Console.WriteLine(Manfred_Mann.species.speciesDetails());
 
             Animal Martha = new Animal("Martha");
             Martha.species = new Murinus();
             Martha.genus = new Genus("Eunectes");
-            Console.WriteLine(Martha.species.speciesDetails());
+            // Console.WriteLine(Martha.species.speciesDetails());
 
             Animal Barton_Fink = new Animal("Barton Fink");
             Barton_Fink.species = new Polylepis();
             Barton_Fink.genus = new Genus("Dendroaspis");
-            Console.WriteLine(Barton_Fink.species.speciesDetails());
+            // Console.WriteLine(Barton_Fink.species.speciesDetails());
 
             Animal Jeffrey = new Animal("Jeffrey");
             Jeffrey.species = new Geoffrensis();
             Jeffrey.genus = new Genus("Inus");
-            Console.WriteLine(Jeffrey.species.speciesDetails());
+            // Console.WriteLine(Jeffrey.species.speciesDetails());
 
             Animal Mr_Bipps = new Animal("Mr. Bipps");
             Mr_Bipps.species = new Suricatta();
             Mr_Bipps.genus = new Genus("Suricata");
-            Console.WriteLine(Mr_Bipps.species.speciesDetails());
+            // Console.WriteLine(Mr_Bipps.species.speciesDetails());
 
             Animal Sally = new Animal("Sally");
             Sally.species = new Sirtalis();
             Sally.genus = new Genus("Thamnophis");
-            Console.WriteLine(Sally.species.speciesDetails());
+            // Console.WriteLine(Sally.species.speciesDetails());
 
             Animal PatPat = new Animal("PatPat");
             PatPat.species = new Pacifica();
             PatPat.genus = new Genus("Gavia");
-            Console.WriteLine(PatPat.species.speciesDetails());
+            // Console.WriteLine(PatPat.species.speciesDetails());
 
             Animal Terry = new Animal("Terry");
             Terry.species = new Tetradactyla();
             Terry.genus = new Genus("Phataginus");
-            Console.WriteLine(Terry.species.speciesDetails());
+            // Console.WriteLine(Terry.species.speciesDetails());
 
             Animal Viraj = new Animal("Viraj");
             Viraj.species = new Variegatus();
             Viraj.genus = new Genus("Bradypus");
-            Console.WriteLine(Viraj.species.speciesDetails());
+            // Console.WriteLine(Viraj.species.speciesDetails());
             //the following works
-            Console.WriteLine(Manfred_Mann.species.speciesDetails());
+
+            // Console.WriteLine(Manfred_Mann.species.speciesDetails());
             //the following does NOT work. speciesDetails is a METHOD on species, which is a PROPERTY on Manfred. Have to burrow into the property itself in order to call its method.
 
             //    Console.WriteLine(Manfred_Mann.speciesDetails());
 
-            Console.WriteLine(Manfred_Mann.animalDetails());
+            // Console.WriteLine(Manfred_Mann.animalDetails());
             //The following won't work: it tries tries to set the _secretname to the animal name, which is disallowed in the logic in Animal class:
             // Barton_Fink.secretName = "Barton Fink";
             //The following DOES work, because the secret name is not the same as the animal name
@@ -87,7 +88,6 @@ namespace Zoolandia
             Console.WriteLine(Barton_Fink.eat("someone's face", 8));
             Console.WriteLine(Barton_Fink.species.speciesDetails());
 
-            Console.WriteLine(Jeffrey.species.commonName);
             //OTHER LESSONS: CAN'T CALL A BASE IN A STATIC METHOD, e.g., HERE IN MAIN. Had to do it in the class wherein the overridden method was defined ... in fact, did it within the same method.
 
             Console.WriteLine(Manfred_Mann.species.speak("Romanian"));
@@ -115,13 +115,28 @@ namespace Zoolandia
 
             //show user habitats and their animals
 
-            Console.WriteLine(SouthAfricanHabitat.showSouthAfricanAnimals());
-            Console.WriteLine(BorealForestHabitat.showBorealForestAnimals());
-            Console.WriteLine(AmazonianRainforestHabitat.showAmazonianRainforestAnimals());
+            // Console.WriteLine(SouthAfricanHabitat.showSouthAfricanAnimals());
+            // Console.WriteLine(BorealForestHabitat.showBorealForestAnimals());
+            // Console.WriteLine(AmazonianRainforestHabitat.showAmazonianRainforestAnimals());
 
+            
 
+            Console.WriteLine("Type the name of an animal to view its details");
             // Animal myAnimal = new Animal(args[0]);
             // Console.WriteLine(myAnimal.animalName);
+            string userinput = Console.ReadLine();
+            string userAnimalName = userinput.Split(new Char[] { ' ' } )[0];
+            string userSpeciesChoice = userinput.Split(new Char[] {' '} )[1];
+            string userSecretName = userinput.Split(new Char[] { ' ' } )[2];
+
+            //following won't work, still need to fully investigate why, has to do with how Console.WriteLine works, expects what happens after comma to be an argument:
+
+            // Console.WriteLine(userAnimalName, userSecretName)
+
+            // will work
+            Console.WriteLine($"{userAnimalName} {userSecretName}");
+            Animal userAnimal = new Animal("userAnimalName");
+            
 
         }
     }
