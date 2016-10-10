@@ -13,11 +13,6 @@ namespace Zoolandia.Habitats
 
         public List<Animal> AllAnimals = new List<Animal>();
 
-        public void addToAllAnimals(Animal animal)
-        {
-            AllAnimals.Add(animal);
-
-        }
         public string showAllAnimals()
         {
             string output = "";
