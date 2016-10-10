@@ -8,8 +8,7 @@ namespace Zoolandia.AnimalsClass
 
     public class Animal : IAnimal
     {
-
-
+    
         //Public property names, including other classes 
         public string animalName { get; set; }
 

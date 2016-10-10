@@ -1,3 +1,5 @@
+using Zoolandia.AnimalsClass;
+using System.Collections.Generic;
 
 namespace Zoolandia.Habitats
 {
@@ -8,8 +10,28 @@ namespace Zoolandia.Habitats
         public string name { get; set; }
 
         public bool openToPublic { get; set; }
-       
+
+        public List<Animal> AllAnimals = new List<Animal>();
+
+        public void addToAllAnimals(Animal animal)
+        {
+            AllAnimals.Add(animal);
+
+        }
+        public string showAllAnimals()
+        {
+            string output = "";
+
+            foreach (Animal animal in AllAnimals)
+            {
+                output += $"\n{animal.animalName} has joined the global habitat!";
+            }
+
+            return output;
+        }
     }
+
+
 
 
 

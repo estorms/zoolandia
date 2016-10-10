@@ -13,6 +13,7 @@ using Zoolandia.GenusClass;
 using Zoolandia.AmazonianRainforest;
 using Zoolandia.SouthAfrica;
 using Zoolandia.BorealForest;
+using Zoolandia.Habitats;
 
 //cool things to do: cycle through each animal, determine its habitat based on species property
 
@@ -24,18 +25,23 @@ namespace Zoolandia
         {
             //initiate Program
 
-            Console.WriteLine("Let's liberate some sentient beings. Who's your pal?");
+            Console.WriteLine("Let's liberate some sentient beings! Who would you like to release from the zoo?");
 
+            Habitat appHabitat = new Habitat();
             //create animals
 
             Animal Manfred_Mann = new Animal("Manfred Mann");
             Manfred_Mann.species = new Alces();
             Manfred_Mann.genus = new Genus("Alces");
+            appHabitat.addToAllAnimals(Manfred_Mann);
+            
             // Console.WriteLine(Manfred_Mann.species.speciesDetails());
 
             Animal Martha = new Animal("Martha");
             Martha.species = new Murinus();
             Martha.genus = new Genus("Eunectes");
+            appHabitat.addToAllAnimals(Martha);
+            
             // Console.WriteLine(Martha.species.speciesDetails());
 
             Animal Barton_Fink = new Animal("Barton Fink");
@@ -46,31 +52,42 @@ namespace Zoolandia
             Animal Jeffrey = new Animal("Jeffrey");
             Jeffrey.species = new Geoffrensis();
             Jeffrey.genus = new Genus("Inus");
+            appHabitat.addToAllAnimals(Jeffrey);
+            
             // Console.WriteLine(Jeffrey.species.speciesDetails());
 
             Animal Mr_Bipps = new Animal("Mr. Bipps");
             Mr_Bipps.species = new Suricatta();
             Mr_Bipps.genus = new Genus("Suricata");
+            appHabitat.addToAllAnimals(Mr_Bipps);
+            
             // Console.WriteLine(Mr_Bipps.species.speciesDetails());
 
             Animal Sally = new Animal("Sally");
             Sally.species = new Sirtalis();
             Sally.genus = new Genus("Thamnophis");
+            appHabitat.addToAllAnimals(Sally);
+            
             // Console.WriteLine(Sally.species.speciesDetails());
 
             Animal PatPat = new Animal("PatPat");
             PatPat.species = new Pacifica();
             PatPat.genus = new Genus("Gavia");
+            appHabitat.addToAllAnimals(PatPat);
+            
             // Console.WriteLine(PatPat.species.speciesDetails());
 
             Animal Terry = new Animal("Terry");
             Terry.species = new Tetradactyla();
             Terry.genus = new Genus("Phataginus");
+            appHabitat.addToAllAnimals(Terry);
+            
             // Console.WriteLine(Terry.species.speciesDetails());
 
             Animal Viraj = new Animal("Viraj");
             Viraj.species = new Variegatus();
             Viraj.genus = new Genus("Bradypus");
+            appHabitat.addToAllAnimals(Viraj);
             // Console.WriteLine(Viraj.species.speciesDetails());
             //the following works
 
@@ -83,9 +100,9 @@ namespace Zoolandia
             //The following won't work: it tries tries to set the _secretname to the animal name, which is disallowed in the logic in Animal class:
             // Barton_Fink.secretName = "Barton Fink";
             //The following DOES work, because the secret name is not the same as the animal name
-            Barton_Fink.secretName = "Bartholomew";
-            Console.WriteLine(Barton_Fink.eat("someone's face"));
-            Console.WriteLine(Barton_Fink.eat("someone's face", 8));
+            // Barton_Fink.secretName = "Bartholomew";
+            // Console.WriteLine(Barton_Fink.eat("someone's face"));
+            // Console.WriteLine(Barton_Fink.eat("someone's face", 8));
             Console.WriteLine(Barton_Fink.species.speciesDetails());
 
             //OTHER LESSONS: CAN'T CALL A BASE IN A STATIC METHOD, e.g., HERE IN MAIN. Had to do it in the class wherein the overridden method was defined ... in fact, did it within the same method.
@@ -119,25 +136,39 @@ namespace Zoolandia
             // Console.WriteLine(BorealForestHabitat.showBorealForestAnimals());
             // Console.WriteLine(AmazonianRainforestHabitat.showAmazonianRainforestAnimals());
 
-            
 
-            Console.WriteLine("Type the name of an animal to view its details");
+
+            Console.WriteLine("Make a new animal! Enter its name, species, and secret name!");
             // Animal myAnimal = new Animal(args[0]);
             // Console.WriteLine(myAnimal.animalName);
             string userinput = Console.ReadLine();
-            string userAnimalName = userinput.Split(new Char[] { ' ' } )[0];
-            string userSpeciesChoice = userinput.Split(new Char[] {' '} )[1];
-            string userSecretName = userinput.Split(new Char[] { ' ' } )[2];
+            string userAnimalName = userinput.Split(new Char[] { ' ' })[0];
+            string userSpeciesChoice = userinput.Split(new Char[] { ' ' })[1];
+            string userSecretName = userinput.Split(new Char[] { ' ' })[2];
 
             //following won't work, still need to fully investigate why, has to do with how Console.WriteLine works, expects what happens after comma to be an argument:
 
             // Console.WriteLine(userAnimalName, userSecretName)
 
             // will work
-            Console.WriteLine($"{userAnimalName} {userSecretName}");
-            Animal userAnimal = new Animal("userAnimalName");
+            Console.WriteLine($"{userAnimalName} {userSpeciesChoice} {userSecretName}");
+            Animal userAnimal = new Animal(userAnimalName);
+            string userAnimalSpeciesCommonName = null;
             
-
+            foreach (Animal animal in appHabitat.AllAnimals) {
+                if (animal.species.commonName == userSpeciesChoice) {
+                    Console.WriteLine("match!");
+                    userAnimalSpeciesCommonName = userSpeciesChoice;
+                    userAnimal.species = new Pacifica();
+                    
+                }
+            }
+            // Animal userAnimal = new Animal("userAnimalName");
         }
+
+        // private static Animal[] GetAllAnimals(Animal[] allAnimals)
+        // {
+        //     return allAnimals;
+        // }
     }
 }
