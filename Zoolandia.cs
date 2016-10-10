@@ -39,64 +39,67 @@ namespace Zoolandia
             //add animals directly here, instead of via method defined in habitat class: this IS dry
             appHabitat.AllAnimals.Add(Manfred_Mann);
             
-            // Console.WriteLine(Manfred_Mann.species.speciesDetails());
+            //use method on species class
+
+            Console.WriteLine(Manfred_Mann.species.speciesDetails());
 
             Animal Martha = new Animal("Martha");
             Martha.species = new Murinus();
             Martha.species.genus = new Genus("Eunectes");
             appHabitat.AllAnimals.Add(Martha);            
             
-            // Console.WriteLine(Martha.species.speciesDetails());
+            Console.WriteLine(Martha.species.speciesDetails());
             Animal Barton_Fink = new Animal("Barton Fink");
             Barton_Fink.species = new Polylepis();
             Barton_Fink.species.genus = new Genus("Dendroaspis");
             appHabitat.AllAnimals.Add(Barton_Fink);            
             
-            // Console.WriteLine(Barton_Fink.species.speciesDetails());
+            Console.WriteLine(Barton_Fink.species.speciesDetails());
 
             Animal Jeffrey = new Animal("Jeffrey");
             Jeffrey.species = new Geoffrensis();
             Jeffrey.species.genus = new Genus("Inus");
             appHabitat.AllAnimals.Add(Barton_Fink);            
             
-            // Console.WriteLine(Jeffrey.species.speciesDetails());
+            Console.WriteLine(Jeffrey.species.speciesDetails());
 
             Animal Mr_Bipps = new Animal("Mr. Bipps");
             Mr_Bipps.species = new Suricatta();
             Mr_Bipps.species.genus = new Genus("Suricata");
             appHabitat.AllAnimals.Add(Mr_Bipps);            
             
-            // Console.WriteLine(Mr_Bipps.species.speciesDetails());
+            Console.WriteLine(Mr_Bipps.species.speciesDetails());
 
             Animal Sally = new Animal("Sally");
             Sally.species = new Sirtalis();
             Sally.species.genus = new Genus("Thamnophis");
             appHabitat.AllAnimals.Add(Sally);            
             
-            // Console.WriteLine(Sally.species.speciesDetails());
+            Console.WriteLine(Sally.species.speciesDetails());
 
             Animal PatPat = new Animal("PatPat");
             PatPat.species = new Pacifica();
             PatPat.species.genus = new Genus("Gavia");
             appHabitat.AllAnimals.Add(PatPat);
             
-            // Console.WriteLine(PatPat.species.speciesDetails());
+            Console.WriteLine(PatPat.species.speciesDetails());
 
             Animal Terry = new Animal("Terry");
             Terry.species = new Tetradactyla();
             Terry.species.genus = new Genus("Phataginus");
             appHabitat.AllAnimals.Add(Terry);            
-            // Console.WriteLine(Terry.species.speciesDetails());
+            Console.WriteLine(Terry.species.speciesDetails());
 
             Animal Viraj = new Animal("Viraj");
             Viraj.species = new Variegatus();
             Viraj.species.genus = new Genus("Bradypus");
             appHabitat.AllAnimals.Add(Viraj);            
             
-            // Console.WriteLine(Viraj.species.speciesDetails());
+            Console.WriteLine(Viraj.species.speciesDetails());
             //the following works
 
             // Console.WriteLine(Manfred_Mann.species.speciesDetails());
+
             //the following does NOT work. speciesDetails is a METHOD on species, which is a PROPERTY on Manfred. Have to burrow into the property itself in order to call its method.
 
             //    Console.WriteLine(Manfred_Mann.speciesDetails());
@@ -106,16 +109,21 @@ namespace Zoolandia
             // Barton_Fink.secretName = "Barton Fink";
             // The following DOES work, because the secret name is not the same as the animal name
             Barton_Fink.secretName = "Bartholomew";
+
+            //use all methods on animal class, including overridden methods
+
             Console.WriteLine(Barton_Fink.eat("someone's face"));
             Console.WriteLine(Barton_Fink.eat("someone's face", 8));
             Console.WriteLine(Barton_Fink.species.speciesDetails());
+            Console.WriteLine(Barton_Fink.sleep(true));
+            Console.WriteLine(Barton_Fink.reproduce(17));
 
             //OTHER LESSONS: CAN'T CALL A BASE IN A STATIC METHOD, e.g., HERE IN MAIN. Had to do it in the class wherein the overridden method was defined ... in fact, did it within the same method.
 
+            //use virtual method on species class that is overridden in Alces class, which inherits from species. This method uses both the base method and the ovverriden method
+
             Console.WriteLine(Manfred_Mann.species.speak("Romanian"));
-            // Console.WriteLine("Give Manfred Mann a secret name! Just remember, it must be different from his real name.");
-            // Manfred_Mann.secretName = Console.ReadLine();
-            // Console.WriteLine($"Manfred Mann's secret name has been set to {Manfred_Mann.secretName}");
+            
 
             //create habitats
             BorealForestHabitat BorealForestHabitat = new BorealForestHabitat("Boreal Forest");
@@ -179,10 +187,5 @@ namespace Zoolandia
 
 //THIS IS WHERE PLAY ENDS
         }
-
-        // private static Animal[] GetAllAnimals(Animal[] allAnimals)
-        // {
-        //     return allAnimals;
-        // }
     }
 }
