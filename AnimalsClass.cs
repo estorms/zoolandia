@@ -71,7 +71,7 @@ namespace Zoolandia.AnimalsClass
         public virtual string reproduce(int avgOffspring)
         {
 
-            return $"{this.animalName} has approximately {avgOffspring} in its lifetime.";
+            return $"{this.animalName} has approximately {avgOffspring} offspring in its lifetime.";
         }
 
 

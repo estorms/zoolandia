@@ -14,6 +14,7 @@ using Zoolandia.AmazonianRainforest;
 using Zoolandia.SouthAfrica;
 using Zoolandia.BorealForest;
 using Zoolandia.Habitats;
+using Zoolandia.SpeciesClass;
 
 //cool things to do: cycle through each animal, determine its habitat based on species property
 
@@ -38,7 +39,7 @@ namespace Zoolandia
             // appHabitat.addToAllAnimals(Manfred_Mann);
             //add animals directly here, instead of via method defined in habitat class: this IS dry
             appHabitat.AllAnimals.Add(Manfred_Mann);
-            
+
             //use method on species class
 
             Console.WriteLine(Manfred_Mann.species.speciesDetails());
@@ -46,55 +47,55 @@ namespace Zoolandia
             Animal Martha = new Animal("Martha");
             Martha.species = new Murinus();
             Martha.species.genus = new Genus("Eunectes");
-            appHabitat.AllAnimals.Add(Martha);            
-            
+            appHabitat.AllAnimals.Add(Martha);
+
             Console.WriteLine(Martha.species.speciesDetails());
             Animal Barton_Fink = new Animal("Barton Fink");
             Barton_Fink.species = new Polylepis();
             Barton_Fink.species.genus = new Genus("Dendroaspis");
-            appHabitat.AllAnimals.Add(Barton_Fink);            
-            
+            appHabitat.AllAnimals.Add(Barton_Fink);
+
             Console.WriteLine(Barton_Fink.species.speciesDetails());
 
             Animal Jeffrey = new Animal("Jeffrey");
             Jeffrey.species = new Geoffrensis();
             Jeffrey.species.genus = new Genus("Inus");
-            appHabitat.AllAnimals.Add(Barton_Fink);            
-            
+            appHabitat.AllAnimals.Add(Barton_Fink);
+
             Console.WriteLine(Jeffrey.species.speciesDetails());
 
             Animal Mr_Bipps = new Animal("Mr. Bipps");
             Mr_Bipps.species = new Suricatta();
             Mr_Bipps.species.genus = new Genus("Suricata");
-            appHabitat.AllAnimals.Add(Mr_Bipps);            
-            
+            appHabitat.AllAnimals.Add(Mr_Bipps);
+
             Console.WriteLine(Mr_Bipps.species.speciesDetails());
 
             Animal Sally = new Animal("Sally");
             Sally.species = new Sirtalis();
             Sally.species.genus = new Genus("Thamnophis");
-            appHabitat.AllAnimals.Add(Sally);            
-            
+            appHabitat.AllAnimals.Add(Sally);
+
             Console.WriteLine(Sally.species.speciesDetails());
 
             Animal PatPat = new Animal("PatPat");
             PatPat.species = new Pacifica();
             PatPat.species.genus = new Genus("Gavia");
             appHabitat.AllAnimals.Add(PatPat);
-            
+
             Console.WriteLine(PatPat.species.speciesDetails());
 
             Animal Terry = new Animal("Terry");
             Terry.species = new Tetradactyla();
             Terry.species.genus = new Genus("Phataginus");
-            appHabitat.AllAnimals.Add(Terry);            
+            appHabitat.AllAnimals.Add(Terry);
             Console.WriteLine(Terry.species.speciesDetails());
 
             Animal Viraj = new Animal("Viraj");
             Viraj.species = new Variegatus();
             Viraj.species.genus = new Genus("Bradypus");
-            appHabitat.AllAnimals.Add(Viraj);            
-            
+            appHabitat.AllAnimals.Add(Viraj);
+
             Console.WriteLine(Viraj.species.speciesDetails());
             //the following works
 
@@ -123,14 +124,14 @@ namespace Zoolandia
             //use virtual method on species class that is overridden in Alces class, which inherits from species. This method uses both the base method and the ovverriden method
 
             Console.WriteLine(Manfred_Mann.species.speak("Romanian"));
-            
+
 
             //create habitats
             BorealForestHabitat BorealForestHabitat = new BorealForestHabitat("Boreal Forest");
             AmazonianRainforestHabitat AmazonianRainforestHabitat = new AmazonianRainforestHabitat("Amazonian Rainforest");
             SouthAfricanHabitat SouthAfricanHabitat = new SouthAfricanHabitat("South African");
 
-            //add animals to habitats
+            //add animals to habitats & show user each animal in habitat
             AmazonianRainforestHabitat.AllAnimals.Add(Martha);
             AmazonianRainforestHabitat.AllAnimals.Add(Jeffrey);
             AmazonianRainforestHabitat.AllAnimals.Add(Viraj);
@@ -140,26 +141,18 @@ namespace Zoolandia
             BorealForestHabitat.AllAnimals.Add(PatPat);
             BorealForestHabitat.AllAnimals.Add(Sally);
             Console.WriteLine(BorealForestHabitat.showAllAnimals(BorealForestHabitat.name));
-            
+
 
             SouthAfricanHabitat.AllAnimals.Add(Barton_Fink);
             SouthAfricanHabitat.AllAnimals.Add(Mr_Bipps);
             SouthAfricanHabitat.AllAnimals.Add(Terry);
             Console.WriteLine(SouthAfricanHabitat.showAllAnimals(SouthAfricanHabitat.name));
 
-            //show user habitats and their animals
 
-            // Console.WriteLine(SouthAfricanHabitat.showSouthAfricanAnimals());
-            // Console.WriteLine(BorealForestHabitat.showBorealForestAnimals());
-            // Console.WriteLine(AmazonianRainforestHabitat.showAmazonianRainforestAnimals());
+
 
             //THIS IS PLAY: UNCOMMENT IT OUT!
 
-            // Console.WriteLine("Make a new animal! Enter its name, species, and secret name!");
-            // string userinput = Console.ReadLine();
-            // string userAnimalName = userinput.Split(new Char[] { ' ' })[0];
-            // string userSpeciesChoice = userinput.Split(new Char[] { ' ' })[1];
-            // string userSecretName = userinput.Split(new Char[] { ' ' })[2];
 
             //THIS IS WHERE PLAY ENDS
 
@@ -167,25 +160,35 @@ namespace Zoolandia
 
             // Console.WriteLine(userAnimalName, userSecretName)
 
-            // will work
 
             //THIS IS PLAY. UNCOMMENT IT OUT!
-
-            // Console.WriteLine($"{userAnimalName} {userSpeciesChoice} {userSecretName}");
-            // Animal userAnimal = new Animal(userAnimalName);
-            // string userAnimalSpeciesCommonName = null;
+            Console.WriteLine("Make a new animal! Enter its name, species, and secret name!");
+            string userinput = Console.ReadLine();
+            string userAnimalName = userinput.Split(new Char[] { ' ' })[0];
+            string userSpeciesChoice = userinput.Split(new Char[] { ' ' })[1];
+            string userSecretName = userinput.Split(new Char[] { ' ' })[2];
             
-            // foreach (Animal animal in appHabitat.AllAnimals) {
-            //     if (animal.species.commonName == userSpeciesChoice) {
-            //         Console.WriteLine("match!");
-            //         userAnimalSpeciesCommonName = userSpeciesChoice;
-            //         userAnimal.species = new Pacifica();
-                    
-            //     }
-            // }
+            // will work
+            Console.WriteLine($"{userAnimalName} {userSpeciesChoice} {userSecretName}");
+            Animal userAnimal = new Animal(userAnimalName);
+            userAnimal.secretName = userSecretName;
 
+            foreach (Animal animal in appHabitat.AllAnimals)
+            {
+                //need to extract the scientific name as well as the common name and use that to instantiate a new animal of the chosen species
+                if (animal.species.commonName == userSpeciesChoice)
+                {
+                    //need to investigate the method Ryan gave you here further
+                    Species userSpecies = new Species {
+                    scientificName = animal.species.scientificName,
+                    commonName = userSpeciesChoice,
+                    endangered = animal.species.endangered,
+                    habitat = animal.species.habitat
+                };
 
-//THIS IS WHERE PLAY ENDS
+                userAnimal.species = userSpecies;
+                }
+            }
         }
     }
 }
