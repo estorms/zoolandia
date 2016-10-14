@@ -148,37 +148,23 @@ namespace Zoolandia
             SouthAfricanHabitat.AllAnimals.Add(Terry);
             Console.WriteLine(SouthAfricanHabitat.showAllAnimals(SouthAfricanHabitat.name));
 
-
-
-
-            //THIS IS PLAY: UNCOMMENT IT OUT!
-
-
-            //THIS IS WHERE PLAY ENDS
-
-            //following won't work, still need to fully investigate why, has to do with how Console.WriteLine works, expects what happens after comma to be an argument:
-
-            // Console.WriteLine(userAnimalName, userSecretName)
-
-
-            //THIS IS PLAY. UNCOMMENT IT OUT!
+            //prompt user to make a new animal of his or her choosing
             Console.WriteLine("Make a new animal! Enter its name, species, and secret name!");
             string userinput = Console.ReadLine();
             string userAnimalName = userinput.Split(new Char[] { ' ' })[0];
             string userSpeciesChoice = userinput.Split(new Char[] { ' ' })[1];
             string userSecretName = userinput.Split(new Char[] { ' ' })[2];
             
-            // will work
             Console.WriteLine($"{userAnimalName} {userSpeciesChoice} {userSecretName}");
             Animal userAnimal = new Animal(userAnimalName);
             userAnimal.secretName = userSecretName;
 
             foreach (Animal animal in appHabitat.AllAnimals)
             {
-                //need to extract the scientific name as well as the common name and use that to instantiate a new animal of the chosen species
+                //extract the scientific name as well as the common name and use that to instantiate a new animal of the chosen species
                 if (animal.species.commonName == userSpeciesChoice)
                 {
-                    //need to investigate the method Ryan gave you here further
+                    //make new animal using object initializer pattern to apply user input
                     Species userSpecies = new Species {
                     scientificName = animal.species.scientificName,
                     commonName = userSpeciesChoice,

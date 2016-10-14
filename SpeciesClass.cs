@@ -8,6 +8,7 @@ namespace Zoolandia.SpeciesClass
 
     public class Species
     {
+        //types and properties, including Genus class as type of property genus
         public string commonName { get; set; }
 
         public string scientificName { get; set; }
@@ -25,7 +26,7 @@ namespace Zoolandia.SpeciesClass
                 return $"The {this.commonName}'s scientific name is {this.scientificName}. Its natural habitat is {this.habitat}. It IS endangered. Be kind.";
             }
 
-            //Had to explicitly state what to do if endangered == false, even though you would assume that through inference it would work with simply an else {do this, etc.}
+            //Explicitly state what to do if endangered == false
             else if (endangered == false)
             {
                 return $"The {this.commonName}'s scientific name is {this.scientificName}. Its natural habitat is {this.habitat}. It is not endangered, but you still must be kind.";
