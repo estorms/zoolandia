@@ -155,25 +155,37 @@ namespace Zoolandia
             string userSpeciesChoice = userinput.Split(new Char[] { ' ' })[1];
             string userSecretName = userinput.Split(new Char[] { ' ' })[2];
             
-            Console.WriteLine($"{userAnimalName} {userSpeciesChoice} {userSecretName}");
             Animal userAnimal = new Animal(userAnimalName);
+            Console.WriteLine(userAnimal.animalName);
             userAnimal.secretName = userSecretName;
+            Console.WriteLine(userAnimal.secretName);
+
+            
+            int printMe = 34;
+            ///LOOK AT THE SYNTAX DIFFERENCE BETWEEN THE BELOW METHODS OF PASSING IN DATA: ONE IS INTERPOLATION, THE OTHER ARGUMENT INJECTION!!!!
+            Console.WriteLine("{0} {1} {2}", userSecretName, printMe, Barton_Fink.species.endangered);
+            Console.WriteLine($"{userAnimalName} {userSpeciesChoice} {userSecretName}");
+
 
             foreach (Animal animal in appHabitat.AllAnimals)
             {
                 //extract the scientific name as well as the common name and use that to instantiate a new animal of the chosen species
                 if (animal.species.commonName == userSpeciesChoice)
                 {
-                    //make new animal using object initializer pattern to apply user input
+                    Console.WriteLine("match found!");
+                    //make new instance of species using object initializer pattern to apply user input
                     Species userSpecies = new Species {
                     scientificName = animal.species.scientificName,
                     commonName = userSpeciesChoice,
                     endangered = animal.species.endangered,
                     habitat = animal.species.habitat
-                };
 
-                userAnimal.species = userSpecies;
+                };
+                    // userAnimal.species = userSpecies;
+
+
                 }
+                // Console.WriteLine($"You've released {userAnimal.animalName}, secretly named {userAnimal.secretName} and known scientifically as {userAnimal.species.scientificName}, from the zoo!");
             }
         }
     }
